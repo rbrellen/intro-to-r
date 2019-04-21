@@ -11,7 +11,7 @@ speaker notes on the side. Slides can be separated with a divider: ---.
 
 # Get to know the iris data frame
 
-- We prefer to use a data format called a `tibble`, which allows us to print our data frames cleaner.
+- Convert data frames to `tibble`s, which allows us to print cleaner.
 
 ```r
 # Store iris as a tibble object named df
@@ -49,7 +49,7 @@ Notes: Notice the information included when we print `df`:
 # Filtering
 
 - To filter, we will use the `filter` function from the `dplyr` package.
-- Inside the function, include a logical statement that evaluates to `TRUE` or `FALSE`
+- Inside the function, include a statement that evaluates to `TRUE` or `FALSE`
 
 ```r
 # Return all rows from df where Sepal.Width is less than 3.0
@@ -77,7 +77,7 @@ filter(df, Sepal.Width < 3.0)
 
 # Using the pipe operator
 
-- Rather than putting the data frame first, we can "pipe" it into the filter function using `%>%` (the pipe operator)
+- A different option: We can "pipe" the data frame into the `filter` function using `%>%` (the pipe operator)
 - It helps to think of the pipe operator at the spoken word "then"
 
 ```r
