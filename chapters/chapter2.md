@@ -1,10 +1,10 @@
 ---
-title: 'Chapter 2: More stuff'
+title: 'Chapter 2: Mutating'
 description:
-  'This chapter will teach you even more stuff and help you learn some new
-  concepts.'
+  'This chapter will teach you how to create new columns in your data frame
+  or modify existing columns.'
 prev: /chapter1
-next: null
+next: /chapter3
 type: chapter
 id: 2
 ---
