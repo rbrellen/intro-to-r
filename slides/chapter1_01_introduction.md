@@ -18,7 +18,7 @@ speaker notes on the side. Slides can be separated with a divider: ---.
 df <- as_tibble(iris)
 
 # Print the iris data frame
-print(df)
+df
 ```
 
 ```out
@@ -46,10 +46,64 @@ Notes: Notice the information included when we print `df`:
 
 ---
 
+# Filtering
+
+- To filter, we will use the `filter` function from the `dplyr` package.
+- Inside the function, include a logical statement that evaluates to `TRUE` or `FALSE`
+
+```r
+# Return all rows from df where Sepal.Width is less than 3.0
+filter(df, Sepal.Width < 3.0)
+```
+
+```out
+# A tibble: 57 x 5
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          <dbl>       <dbl>        <dbl>       <dbl> <fct>
+ 1          4.4         2.9          1.4         0.2 setosa
+ 2          4.5         2.3          1.3         0.3 setosa
+ 3          5.5         2.3          4           1.3 versicolor
+ 4          6.5         2.8          4.6         1.5 versicolor
+ 5          5.7         2.8          4.5         1.3 versicolor
+ 6          4.9         2.4          3.3         1   versicolor
+ 7          6.6         2.9          4.6         1.3 versicolor
+ 8          5.2         2.7          3.9         1.4 versicolor
+ 9          5           2            3.5         1   versicolor
+10          6           2.2          4           1   versicolor
+# ... with 47 more rows
+```
+
+---
+
+# Using the pipe operator
+
+- Rather than putting the data frame first, we can "pipe" it into the filter function using `%>%` (the pipe operator)
+- It helps to think of the pipe operator at the spoken word "then"
+
+```r
+# Start with the df data frame, THEN filter to return all rows where Sepal.Width is less than 3.0
+df %>% filter(Sepal.Width < 3.0)
+```
+
+```out
+# A tibble: 57 x 5
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          <dbl>       <dbl>        <dbl>       <dbl> <fct>
+ 1          4.4         2.9          1.4         0.2 setosa
+ 2          4.5         2.3          1.3         0.3 setosa
+ 3          5.5         2.3          4           1.3 versicolor
+ 4          6.5         2.8          4.6         1.5 versicolor
+ 5          5.7         2.8          4.5         1.3 versicolor
+ 6          4.9         2.4          3.3         1   versicolor
+ 7          6.6         2.9          4.6         1.3 versicolor
+ 8          5.2         2.7          3.9         1.4 versicolor
+ 9          5           2            3.5         1   versicolor
+10          6           2.2          4           1   versicolor
+# ... with 47 more rows
+```
+
+---
+
 # Let's practice!
 
-Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
-libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non
-commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat
-semper urna, in accumsan sapien dui ac mi. Pellentesque felis lorem, semper nec
-velit nec, consectetur placerat enim.
+Notes: The `tidyverse` set of packages (including `dplyr`) is built around functions that expect a data frame as the first argument.
