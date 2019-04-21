@@ -11,13 +11,10 @@ speaker notes on the side. Slides can be separated with a divider: ---.
 
 # Get to know the iris data frame
 
-- Notice the information included when we print `df`:
-  - Number of rows and columns
-  - Data types of each column
-  - First ten rows of data
-  - How many more rows of have not been printed
-```r
+- We prefer to use a data format called a `tibble`, which allows us to print our data frames cleaner.
 
+```r
+# Store iris as a tibble object named df
 df <- as_tibble(iris)
 
 # Print the iris data frame
@@ -41,7 +38,11 @@ print(df)
 # ... with 140 more rows
 ```
 
-Notes: We prefer to use a data format called a `tibble`, which allows us to print our data frames cleaner.
+Notes: Notice the information included when we print `df`:
+  - Number of rows and columns
+  - Data types of each column
+  - First ten rows of data
+  - How many more rows of have not been printed
 
 ---
 
